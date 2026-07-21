@@ -6,6 +6,7 @@ resource "aws_instance" "this" {
   key_name               = var.key_name
 
   tags = {
-    Name = "${var.project}-instance"
+   Name = "${var.project}-${var.env}-ec2"
+   #Name = "${var.project}-instance"
   }
 }

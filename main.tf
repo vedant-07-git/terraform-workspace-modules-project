@@ -6,7 +6,7 @@ module "vpc" {
   source   = "./modules/vpc"
   vpc_cidr = var.vpc_cidr
   project  = var.project
-  env      = var.env
+  env      = terraform.workspace
 }
 
 module "subnet" {
@@ -16,12 +16,14 @@ module "subnet" {
   pri_sub_cidr = var.pri_sub_cidr
   pub_sub_cidr = var.pub_sub_cidr
   project      = var.project
+  env          = terraform.workspace
 }
 
 module "sg" {
   source  = "./modules/sg"
   vpc_id  = module.vpc.vpc_id
   project = var.project
+  env     = terraform.workspace
 }
 
 module "ec2" {
@@ -32,4 +34,5 @@ module "ec2" {
   sg_id         = module.sg.sg_id
   key_name      = var.key_pair
   project       = var.project
+  env           = terraform.workspace
 }
