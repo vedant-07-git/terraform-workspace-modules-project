@@ -213,9 +213,12 @@ module.sg.aws_vpc_security_group_egress_rule.all
 
 module.ec2.aws_instance.this
 ```
+<h2 align="center">🚀 Terraform Apply Output</h2>
+<p align="center">
+  <img src="output.png" alt="Terraform Apply Output" width="900">
+</p>  
 
----
-
+```
 # ✅ Features
 
 * Reusable Terraform Modules
